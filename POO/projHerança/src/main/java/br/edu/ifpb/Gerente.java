@@ -19,6 +19,6 @@ public class Gerente extends Funcionário {
 
     @Override
     public String toString() {
-        return super.toString() +", " + "comissão: R$" + comissão + ", " + "Salário:  R$" + getSalário();
+        return "Gerente= " + super.toString() +", " + "comissão: R$" + comissão + ", " + "Salário:  R$" + getSalário();
     }
 }

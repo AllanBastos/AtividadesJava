@@ -40,4 +40,28 @@ public class Universidade {
         }
         return null;
     }
+
+    public int getQuantidadeFuncionários() {
+        return listaFuncionarios.size();
+    }
+
+    public boolean removerFuncionário(int matricula){
+        for (Funcionário temp : listaFuncionarios)
+            if (temp.getMatrícula() == matricula){
+                return listaFuncionarios.remove(temp);
+            }
+        return false;
+    }
+
+    public String listarTodosFuncionários() {
+
+        StringBuilder str = new StringBuilder();
+
+        for (Funcionário temp : listaFuncionarios) {
+            str.append(temp.toString());
+            str.append("\n");
+        }
+
+        return str.toString();
+    }
 }

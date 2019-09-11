@@ -13,10 +13,17 @@ public class App
      Gerente g1 = new Gerente();
      Gerente g2 = new Gerente(5000, "Adilson", 5000,1500);
 
-        System.out.println(p1);
-        System.out.println(p2);
+//        System.out.println(p1);
+//        System.out.println(p2);
+//        System.out.println(g2)
         System.out.println(g1);
-        System.out.println(g2);
 
+        Universidade monstros = new Universidade();
+
+        monstros.adicionarFuncionário(p1);
+        monstros.adicionarFuncionário(p2);
+        monstros.adicionarFuncionário(g1);
+        monstros.adicionarFuncionário(g2);
+        System.out.println(monstros.listarTodosFuncionários());
     }
 }

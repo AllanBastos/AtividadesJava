@@ -29,6 +29,6 @@ public class Professor extends Funcionário{
 
     @Override
     public String toString() {
-        return super.toString() +", " + "número de horas: " + getNúmeroHorasDisciplinas() + ", " +  "Salário: R$" + getSalário();
+        return "Professor= " + super.toString() +", " + "número de horas: " + getNúmeroHorasDisciplinas() + ", " +  "Salário: R$" + getSalário();
     }
 }
