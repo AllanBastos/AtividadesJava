@@ -50,7 +50,7 @@ public class ContaCorrente {
             descontaCPMF(calcularCPMF(quantia));
             return true;
         }
-        return false;
+        throw new SaldoInvalidoException();
     }
 
     public boolean Deposito(double valor) {
@@ -58,7 +58,7 @@ public class ContaCorrente {
             Saldo += valor;
             return true;
         }
-        return false;
+        throw new QuantiaNegativaException();
     }
 
     public double saldo(){
@@ -87,3 +87,4 @@ public class ContaCorrente {
                 '}';
     }
 }
+
