@@ -1,4 +1,7 @@
 package com.gmail.allanbastos;
+
+import java.util.Objects;
+
 // criando uma classe conta
 public class Conta {
     private int Numero;
@@ -58,5 +61,18 @@ public class Conta {
     public String toString() {
 
         return "Conta: " + getNumero() + "; Titular: " + getTitular() + "\nSaldo: " + getSaldo() + "\n" ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Conta conta = (Conta) o;
+        return Numero == conta.Numero;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Numero);
     }
 }// fim da classe conta

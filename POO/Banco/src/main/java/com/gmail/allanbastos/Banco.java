@@ -1,14 +1,15 @@
 package com.gmail.allanbastos;
 
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Banco {
-    private List<Conta> listaContas = null;
+    private HashSet<Conta> listaContas = null;
 
     Banco(){
-        listaContas = new LinkedList<>();
+        listaContas = new HashSet<>();
     }
 
     public boolean cadastrarConta(int numero, String tiular, double saldo_inicial){
