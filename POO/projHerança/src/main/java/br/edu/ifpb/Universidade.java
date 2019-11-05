@@ -1,15 +1,13 @@
 package br.edu.ifpb;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Universidade {
-    private List<Funcionário> listaFuncionarios = null;
+    private NavigableSet<Funcionário> listaFuncionarios = null;
     private String endereco;
 
     {
-        listaFuncionarios = new ArrayList<>();
+        listaFuncionarios = new TreeSet<>();
     }
 
     public Universidade(String endereco){
@@ -23,13 +21,8 @@ public class Universidade {
 
 
     public boolean adicionarFuncionário(Funcionário func) {
+        if (func == null) return false;
 
-        if(Objects.isNull(func)) return false;
-
-        for ( Funcionário Temp : listaFuncionarios) {
-            if (Temp.getMatrícula() == func.getMatrícula())
-                return false;
-        }
         return listaFuncionarios.add(func);
     }
 
@@ -63,5 +56,6 @@ public class Universidade {
         }
 
         return str.toString();
+//        return listaFuncionarios.toString();
     }
 }
