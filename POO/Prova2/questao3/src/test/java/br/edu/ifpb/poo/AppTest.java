@@ -18,15 +18,10 @@ public class AppTest
     public void testGetPalavrasPorFaixaPontos(){
         JogoPalavrasCruzadas jogo = new JogoPalavrasCruzadas();
         Set<String> palavras = new HashSet<>();
-         String[] a = {"zyzzyva", "quizzing", "bezazz", "zizzled", "quizzed", "zyzzyvas", "pizazzy", "zizzling",
-                "jazzily", "pazazz", "pazazzes", "quizzers", "jazzlike", "bezazzes", "pizazz", "pizazzes"};
+        palavras =  "[zyzzyva, quizzing, bezazz, zizzled, quizzed, zyzzyvas, pizazzy, zizzling, jazzily, pazazz, pazazzes, quizzers, jazzlike, bezazzes, pizazz, pizazzes]" ;
 
-        for (String palavra : a) {
-            palavras.add(palavra);
-        }
-
-        jogo.lerPalavraDoArquivo(Path.of("/home/allan/JavaProject/AtividadesJava/POO/Prova2/questao3/src/main/java/br/edu/ifpb/poo/palavras.txt"));
+    jogo.lerPalavraDoArquivo(Path.of("/home/allan/JavaProject/AtividadesJava/POO/Prova2/questao3/src/main/java/br/edu/ifpb/poo/palavras.txt"));
         Assert.assertEquals(palavras ,jogo.getPalavrasPorFaixa(35,44));
 
-        }
+    }
 }
