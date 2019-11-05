@@ -1,0 +1,18 @@
+public  class  Porsche extends CarroSport implements recebeImpostoIF {
+        @Override
+        public double imposto() {
+            return 500D;
+        }
+
+public class D20 extends CarroSport implements recebeImpostoIF {
+    @Override
+    public double imposto() {
+        return 100D;
+    }
+}
+
+public class Financeiro {
+    public void ImprimirImposto(recebeImpostoIF carro) {
+        carro.imposto();
+    }
+}
