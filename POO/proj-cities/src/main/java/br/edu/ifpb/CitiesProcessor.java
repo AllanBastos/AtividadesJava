@@ -29,7 +29,7 @@ public class CitiesProcessor {
             BufferedReader br = new BufferedReader(Fr)){
             String linha;
             while ((linha = br.readLine()) != null){
-                String[] palavra = linha.split(",");
+                String[] palavra = linha.split(", ");
                 String nome = palavra[0], sigla = palavra[1], cep = palavra[2];
                 citySetTemp.add(new City(nome, sigla, cep));
             }
@@ -53,7 +53,7 @@ public class CitiesProcessor {
             try {
                 Files.write (
                         destino,
-                        Collections.singleton(String.format(city.getNome() + ", " + city.getSigla() + ", " + city.getCEP())),
+                        Collections.singleton(String.format("%s, %s, %s", city.getNome(), city.getSigla(), city.getCEP())),
                         Charset.defaultCharset(),
                         StandardOpenOption.CREATE,
                         StandardOpenOption.APPEND,
