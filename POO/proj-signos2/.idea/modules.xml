@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/persistencia/persistencia.iml" filepath="$PROJECT_DIR$/persistencia/persistencia.iml" />
       <module fileurl="file://$PROJECT_DIR$/proj-signos2.iml" filepath="$PROJECT_DIR$/proj-signos2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servidor/servidor.iml" filepath="$PROJECT_DIR$/servidor/servidor.iml" />
       <module fileurl="file://$PROJECT_DIR$/signos/signos.iml" filepath="$PROJECT_DIR$/signos/signos.iml" />
     </modules>
   </component>

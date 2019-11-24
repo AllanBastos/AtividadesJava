@@ -6,17 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="servidor" />
-        <module name="signos" />
-        <module name="persistencia" />
+        <module name="cliente" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="persistencia" target="11" />
-      <module name="proj-signos2" target="11" />
-      <module name="servidor" target="11" />
-      <module name="Servidor" target="11" />
-      <module name="signos" target="11" />
+      <module name="cliente" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

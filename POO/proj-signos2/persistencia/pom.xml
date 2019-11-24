@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>signos</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>persistencia</artifactId>
 
 
 </project>
