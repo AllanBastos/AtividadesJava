@@ -3,9 +3,11 @@ package br.edu.ifpb.persistencia;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -22,8 +24,7 @@ public class persistencia {
             while ((linhas = br.readLine())!= null){
                 String[] linha = linhas.split(":");
                 String chave = linha[0];
-                List<String> valor = Collections.singletonList(linha[1]);
-                MapaSignos.put(chave, valor);
+                MapaSignos.get(chave).add(linha[1]);
             }
 
             System.out.println("Lista Atualizada! ");
@@ -49,5 +50,26 @@ public class persistencia {
 
     public void limparlista() {
 
+        Path path = Paths.get(DESTINO);
+        try{
+            Files.delete(path);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+    public boolean atualizaArquivo(Map<String, List<String>> mapaSignos) {
+
+        for ( var chave : mapaSignos.entrySet()){
+            for (String valor : chave.getValue()) {
+                adicionarMsg(chave.getKey(), valor);
+            }
+        }
+
+        return true;
     }
 }

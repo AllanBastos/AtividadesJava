@@ -26,8 +26,8 @@ public class Cliente{
     public static void main(String[] args) throws RemoteException {
         String Host = (args.length < 1) ? "localhost": args[0];
 
+        executarCliente(Host);
         while (true){
-            executarCliente(Host);
             Scanner input = new Scanner(System.in);
             System.out.print("Digite um signo: ");
             String msg = input.nextLine();

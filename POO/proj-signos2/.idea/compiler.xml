@@ -8,10 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="servidor" />
         <module name="signos" />
+        <module name="cliente" />
         <module name="persistencia" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cliente" target="11" />
       <module name="persistencia" target="11" />
       <module name="proj-signos2" target="11" />
       <module name="servidor" target="11" />

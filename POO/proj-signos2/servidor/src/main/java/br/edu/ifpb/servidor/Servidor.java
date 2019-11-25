@@ -48,7 +48,8 @@ public class Servidor implements signos_IF{
 
     @Override
     public boolean limparMsgDoSigno(String signo) throws RemoteException {
-        return false;
+        mapaSignos.remove(signo);
+        return arquivo.atualizaArquivo(mapaSignos);
     }
 
     @Override
