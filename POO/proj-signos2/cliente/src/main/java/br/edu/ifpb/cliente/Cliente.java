@@ -6,13 +6,24 @@ import com.sun.source.tree.WhileLoopTree;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Cliente {
     private static signos_IF stub;
     private static Registry registry;
     private static Scanner input = new Scanner(System.in);
+    private static List<String> signosValidos = new ArrayList<>();
 
+
+    public Cliente() {
+        String signos[] = {"ESCORPIAO", "ARIES", "TOURO", "GEMEOS", "GEMEOS",
+                "LEAO", "VIRGEM", "LIBRA", "SARGITARIO", "AQUARIO", "PEIXES"};
+
+        signosValidos.addAll(Arrays.asList(signos));
+    }
 
     public void execultarCliente(String host){
         try{
@@ -124,30 +135,38 @@ public class Cliente {
     }
 
     private void menuAdicionarNewMsg(){
-
-            System.out.println("Insira o Signo que deseja adicionar a mensagem");
-            String signo = input.nextLine();
-            System.out.println("Insira a mensagem");
-            String msg = input.nextLine();
-            try {
-                stub.adicionarNewMsg(signo.toUpperCase(),msg);
-            } catch (RemoteException e) {
-                e.printStackTrace();
+            while (true) {
+                System.out.println("Insira o Signo que deseja adicionar a mensagem");
+                String signo = input.nextLine();
+                if (signosValidos.contains(signo.toUpperCase())) {
+                    System.out.println("Insira a mensagem");
+                    String msg = input.nextLine();
+                    try {
+                        stub.adicionarNewMsg(signo.toUpperCase(), msg);
+                        break;
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+                else System.out.println("Signo incorreto tenta novamente");
             }
 
     }
 
     private void menucliente(){
         while (true) {
-            System.out.print("Entre Com o signo\n" +
-                    "ou 0 Para voltar\n");
+            System.out.print("Entre Com o signo ou 0 Para voltar\n");
             String signo = input.nextLine();
             if (signo.equals("0")) menu();
-            try {
-                String resposta = stub.getMensagem(signo.toUpperCase());
-                System.out.println("Resposta: " + resposta);
-            } catch (RemoteException e) {
-                e.printStackTrace();
+            else if(signosValidos.contains(signo.toUpperCase())) {
+
+
+                try {
+                    String resposta = stub.getMensagem(signo.toUpperCase());
+                    System.out.println("Resposta: " + resposta);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
