@@ -1,0 +1,5 @@
+br/edu/ifpb/servidor/Biblioteca.class
+br/edu/ifpb/servidor/Persistencia.class
+br/edu/ifpb/servidor/Livro.class
+br/edu/ifpb/servidor/MainServidor.class
+br/edu/ifpb/servidor/Servidor.class

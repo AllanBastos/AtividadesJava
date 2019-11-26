@@ -32,9 +32,7 @@ public class persistencia {
     }
 
     public void atualizarMapa(Map<String, List<String>> MapaSignos){
-        try(FileReader fr = new FileReader(DESTINO);
-            BufferedReader br = new BufferedReader(fr);
-            ){
+
             MapaSignos.clear();
             String linhas;
             List<String> list = new ArrayList<>();
